@@ -1,0 +1,87 @@
+{
+    "source": {
+        "include": ["./src"],
+        "includePattern": ".+\\.js$"
+    },
+    "plugins": [
+        // Markdown記述用のプラグインを指定
+        "plugins/markdown"
+    ],
+    "templates": {
+        "cleverLinks": true,
+        "monospaceLinks": true,
+        "default": {
+            "includeDate": false,
+            // 各種リソースを読み込む場合の指定
+            "staticFiles": {
+                "include": ["./docs/articles"],
+                "includePattern": ".+\\.(png|jpg|gif|ico|css|js)$"
+            }
+        }
+    },
+    "opts": {
+        // テンプレートにdocdashを指定
+        "template": "./node_modules/docdash",
+        // 出力先
+        "destination": "./docs/_site",
+        // READMEファイル(トップページ表示)の指定
+        "readme": "./docs/README.md",
+        "encoding": "utf8",
+        "recurse": true,
+        // 文書フォルダの指定
+        "tutorials": "./docs/articles"
+    },
+
+    // docdashの設定
+    "docdash": {
+        "static": true,
+        "sort": false,
+        "sectionOrder": [
+             "Classes",
+             "Modules",
+             "Externals",
+             "Events",
+             "Namespaces",
+             "Mixins",
+             "Interfaces"
+        ],
+        "search": true,
+        "commonNav": false,
+        "collapse": true,
+        "wrap": false,
+        "typedefs": true,
+        "navLevel": 0,
+        "private": false,
+        // 適用するスクリプトはスタイルシートの設定
+        "scripts": ["scripts/local_settings.css", "scripts/local_settings.js"],
+        // 見出しの設定
+        "menu": {
+            // xxxx.mdファイルはtutorial-xxxx.htmlとなるため
+            // リンクにはHTMLに変換されたファイル名を指定する
+            "起動方法": {
+                "href":"tutorial-run_app.html",
+                "target":"_self",
+                "class":"menu-item",
+                "id":"website_link"
+            },
+            "クラス構成": {
+                "href":"tutorial-class_structure.html",
+                "target":"_self",
+                "class":"menu-item",
+                "id":"website_link"
+            },
+            "メカニズム": {
+                "href":"tutorial-mechanism.html",
+                "target":"_self",
+                "class":"menu-item",
+                "id":"website_link"
+            },
+            "TODO": {
+                "href":"tutorial-todo.html",
+                "target":"_self",
+                "class":"menu-item",
+                "id":"website_link"
+            }
+        }
+    }
+}

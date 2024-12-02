@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "docdash": "^2.0.2",
+    "jsdoc": "^4.0.3"
+  },
+  "scripts": {
+    "docs": "jsdoc --configure ./docs/jsdoc.json --verbose"
+  }
+}
